@@ -52,7 +52,7 @@ body {
   text-shadow: 1px 1px grey;
 }
 
-#user-info-submit-button {
+.btn-dark {
   color: yellow;
   text-shadow: 1px 1px grey;
   margin: 0 auto;
@@ -91,6 +91,10 @@ body {
   display: block;
 }
 
-#pizza-order-submission {
-  padding: 20px;
+#pizza-order-add {
+  padding-top: 20px;
+}
+
+#pizza-order-summary {
+  padding-top: 20px;
 }
