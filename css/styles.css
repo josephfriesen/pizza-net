@@ -1,0 +1,30 @@
+.header {
+  background-image: linear-gradient(red, yellow);
+}
+
+.header-img-panel {
+
+}
+
+.header-img-panel img {
+  width: 100%;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.header-page-title {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.header-page-title h2 {
+  font-size: 48pt;
+  color: white;
+  text-shadow: 2px 2px grey;
+}
+
+.header-page-title p {
+  font-size: 24pt;
+  color: red;
+  text-shadow: 1px 1px black;
+}
