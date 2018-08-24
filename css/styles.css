@@ -1,5 +1,11 @@
+body {
+  background-color: #e6ffff
+}
+
 .header {
   background-image: linear-gradient(red, yellow);
+  border: 2px lightgrey;
+  border-style: solid;
 }
 
 .header-img-panel {
@@ -27,4 +33,28 @@
   font-size: 24pt;
   color: red;
   text-shadow: 1px 1px black;
+}
+
+#user-info-panel {
+  border: 2px lightgrey;
+  border-style: solid;
+}
+
+.card-header {
+  background-color: red;
+  color: white;
+  text-shadow: 1px 1px grey;
+}
+
+.card-body {
+  background-color: black;
+  color: yellow;
+  text-shadow: 1px 1px grey;
+}
+
+#user-info-submit-button {
+  color: yellow;
+  text-shadow: 1px 1px grey;
+  margin: 0 auto;
+  display: block;
 }

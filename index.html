@@ -10,6 +10,7 @@
   </head>
   <body>
     <div class="container">
+
       <div class="jumbotron header">
         <div class="row">
           <div class="col-md-4 header-img-panel">
@@ -21,6 +22,45 @@
           </div>
         </div>
       </div>
+
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card" id="user-info-panel">
+            <div class="card-header">Please enter your name, address and phone:</div>
+            <div class="card-body">
+              <form id="user-info">
+                <div class="form-group">
+                  <label for="user-name">Full name  </label>
+                  <input type="text" id="user-name">
+                </div>
+                <div class="form-group">
+                  <label for="street-address">Street address  </label>
+                  <input type="text" id="street-address">
+                </div>
+                <div class="form-group">
+                  <label for="city">City  </label>
+                  <input type="text" id="city">
+                </div>
+                <div class="form-group">
+                  <label for="state">State  </label>
+                  <input type="text" id="state">
+                </div>
+                <div class="form-group">
+                  <label for="zip">Zip code  </label>
+                  <input type="text" id="zip">
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone number  </label>
+                  <input type="text" id="phone">
+                </div>
+                <button type="submit" class="btn btn-dark" id="user-info-submit-button">Done</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
     </div>
   </body>
 </html>
