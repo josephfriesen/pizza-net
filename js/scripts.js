@@ -1,5 +1,5 @@
 // Constrcutor function to create new objects of type Customer. The user will enter their information on the page, and the information will be entered as the values of the new customer object.
-var Customer(name, street, city, state, zip, phone) {
+function Customer(name, street, city, state, zip, phone) {
   this.userName = name;
   this.streetAddress = street;
   this.city = city;
@@ -9,12 +9,13 @@ var Customer(name, street, city, state, zip, phone) {
 }
 
 // Constructor function for new objects of type Pizza. User will create a new pizza, selecting a size, crust style, and set of toppings, which will be stored as an array.
-var Pizza(size, style, toppings) {
+function Pizza(size, style, toppings) {
   this.size = size; // can take one of three values, "14", "16", or "18".
   this.crustStyle = style; // can take one three values, "regular", "thin", or "deep dish".
   this.toppings = toppings; // an array consisting of a subset of values from the list of toppings
 }
 
+// Prototype to calculate the price of a single pizza.
 Pizza.prototype.price = function() {
   var cost;
   if (this.size === "14") {
@@ -32,7 +33,16 @@ Pizza.prototype.price = function() {
 }
 
 // Constructor funciton for new objects of type Order. Order will have a Customer object and an array of Pizza objects.
-var Order(Customer, Pizzas) {
+function Order(Customer, pizzas) {
   this.Customer = Customer;
-  this.Pizzas = Pizzas;
+  this.pizzas = pizzas; // array of Pizza objects
+}
+
+// Prototype to determine the total price of an order
+Order.prototype.price = function() {
+  var cost = 4; // $4 delivery charge
+  this.pizzas.forEach(function(Pizza) {
+    cost = cost + Pizza.price();
+  })
+  return cost;
 }
