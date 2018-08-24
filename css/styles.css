@@ -40,13 +40,13 @@ body {
   border-style: solid;
 }
 
-.card-header {
-  background-color: red;
+#user-info-header {
+  background-image: linear-gradient(red, yellow);
   color: white;
   text-shadow: 1px 1px grey;
 }
 
-.card-body {
+#user-info-body {
   background-color: black;
   color: yellow;
   text-shadow: 1px 1px grey;
@@ -57,4 +57,40 @@ body {
   text-shadow: 1px 1px grey;
   margin: 0 auto;
   display: block;
+}
+
+#pizza-order-panel {
+  border: 2px lightgrey;
+  border-style: solid;
+}
+
+#pizza-order-header {
+  background-image: linear-gradient(red, yellow);
+  border: 2px lightgrey;
+  border-style: solid;
+  text-shadow: 1px 1px grey;
+  color: white;
+}
+
+#pizza-order-body {
+  background-color: #002db3;
+  color: yellow;
+  text-shadow: 1px 1px black;
+  font-size: 10pt;
+}
+
+#pizza-order-body label {
+  text-align: center;
+  font-size: 16pt;
+  font-style: italic;
+  text-indent: 3em;
+}
+
+#pizza-order-body button {
+  margin: 0 auto;
+  display: block;
+}
+
+#pizza-order-submission {
+  padding: 20px;
 }

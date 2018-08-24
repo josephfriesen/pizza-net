@@ -27,8 +27,8 @@
 
         <div class="col-md-4">
           <div class="card" id="user-info-panel">
-            <div class="card-header">Please enter your name, address and phone:</div>
-            <div class="card-body">
+            <div class="card-header" id="user-info-header">Please enter your name, address and phone:</div>
+            <div class="card-body" id="user-info-body">
               <form id="user-info">
                 <div class="form-group">
                   <label for="user-name">Full name  </label>
@@ -59,6 +59,67 @@
           </div>
         </div>
 
+        <div class="col-md-8">
+          <div class="card" id="pizza-order-panel">
+            <div class="card-header" id="pizza-order-header">Choose Your Pizza:</div>
+            <div class="card-body" id="pizza-order-body">
+              <form id="pizza-order-form">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="pizza-size">Size: </label><br>
+                      <input type="radio" name="pizza-size" value="14" checked> Medium (14")&nbsp;
+                      <input type="radio" name="pizza-size" value="16"> Large (16")&nbsp;
+                      <input type="radio" name="pizza-size" value="18"> X-Large (18")
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="pizza-crust">Select a Style: </label></br>
+                      <input type="radio" name="pizza-crust" value="regular" checked> Regular Crust&nbsp;
+                      <input type="radio" name="pizza-crust" value="thin"> Thin & Crispy&nbsp;
+                      <input type="radio" name="pizza-crust" value="deep-dish"> Deep dish
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-3">
+                    </div>
+                    <div class="col-md-9">
+                      <label for="toppings">Choose your toppings:</label>
+                    </div>
+                    <div class="col-md-3">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3">
+                    </div>
+                    <div class="col-md-3">
+                      <input type="checkbox" name="toppings" value="pepperoni"> Pepperoni<br>
+                      <input type="checkbox" name="toppings" value="sausage"> Sausage<br>
+                      <input type="checkbox" name="toppings" value="anchovies"> Anchovies<br>
+                      <input type="checkbox" name="toppings" value="ham"> Ham
+                    </div>
+                    <div class="col-md-3">
+                      <input type="checkbox" name="toppings" value="peppers"> Peppers<br>
+                      <input type="checkbox" name="toppings" value="onions"> Onions<br>
+                      <input type="checkbox" name="toppings" value="mushrooms"> Mushrooms<br>
+                      <input type="checkbox" name="toppings" value="pineapple"> Pineapple
+                    </div>
+                    <div class="col-md-3">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12" id="pizza-order-submission">
+                      <button type="button" class="btn btn-dark">Add this pizza to order</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>
