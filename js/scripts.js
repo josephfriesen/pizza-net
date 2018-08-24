@@ -55,7 +55,34 @@ Order.prototype.price = function() {
 // User interface logic
 
 $(document).ready(function() {
+  var NewCustomer;
+  var NewOrder;
+  var pizzas = [];
+
   $("#user-info-submit-button").click(function() {
     $("#pizza-order").slideDown();
+    var userName = $("#user-name").val();
+    var address = $("#street-address").val();
+    var city = $("#city").val();
+    var state = $("#state").val();
+    var zip = $("#zip").val();
+    var phone = $("#phone").val();
+    NewCustomer = new Customer(userName, address, city, state, zip, phone);
   });
+
+  $("#pizza-order-add-button").click(function() {
+    var pizzaSize = $("input:radio[name=pizza-size]:checked").val();
+    var pizzaCrust = $("input:radio[name=pizza-crust]:checked").val();
+    var pizzaToppings = [];
+    $("input:checkbox[name=toppings]:checked").each(function() {
+      pizzaToppings.push($(this).val());
+    });
+    var NextPizza = new Pizza(pizzaSize, pizzaCrust, pizzaToppings);
+    pizzas.push(NextPizza);
+    console.log(pizzas);
+    $("input:checkbox[name=toppings]:checked").each(function() {
+      this.checked = false;
+    });
+  });
+
 });

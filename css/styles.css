@@ -95,10 +95,11 @@ body {
   display: block;
 }
 
-#pizza-order-add {
+#pizza-order-add-panel {
   padding-top: 20px;
 }
 
 #pizza-order-summary {
   padding-top: 20px;
+  display: none;
 }
