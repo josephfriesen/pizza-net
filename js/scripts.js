@@ -116,8 +116,10 @@ $(document).ready(function() {
 
   $("#submit-order").click(function() {
     NewOrder = new Order(NewCustomer, pizzas);
-    console.log(NewOrder);
-    console.log(NewOrder.price());
+    $("#sign-off").slideDown();
+    $("#order-form").slideUp();
+    $("#order-cost").text(NewOrder.price());
+    $("#customer-name").text(NewOrder.Customer.userName);
   });
 
 });
