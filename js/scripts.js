@@ -1,3 +1,5 @@
+// Business logic
+
 // Constrcutor function to create new objects of type Customer. The user will enter their information on the page, and the information will be entered as the values of the new customer object.
 function Customer(name, street, city, state, zip, phone) {
   this.userName = name;
@@ -32,7 +34,7 @@ Pizza.prototype.price = function() {
   return cost;
 }
 
-// Constructor funciton for new objects of type Order. Order will have a Customer object and an array of Pizza objects.
+// Constructor function for new objects of type Order. Order will have a Customer object and an array of Pizza objects.
 function Order(Customer, pizzas) {
   this.Customer = Customer;
   this.pizzas = pizzas; // array of Pizza objects
@@ -46,3 +48,14 @@ Order.prototype.price = function() {
   })
   return cost;
 }
+
+
+
+
+// User interface logic
+
+$(document).ready(function() {
+  $("#user-info-submit-button").click(function() {
+    $("#pizza-order").slideDown();
+  });
+});

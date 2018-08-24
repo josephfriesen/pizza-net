@@ -59,6 +59,10 @@ body {
   display: block;
 }
 
+#pizza-order {
+  display: none;
+}
+
 #pizza-order-panel {
   border: 2px lightgrey;
   border-style: solid;
