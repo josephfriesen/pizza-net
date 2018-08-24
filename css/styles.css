@@ -122,9 +122,6 @@ p.disclaimer {
   background-color: #000080;
   border: 20px 2px grey;
   border-style: solid;
-  color: yellow;
-  text-shadow: 1px 1px grey;
-  text-align: center;
 }
 
 #sign-off img {
@@ -136,4 +133,7 @@ p.disclaimer {
 #sign-off h2 {
   vertical-align: middle;
   padding: 15px;
+  color: yellow;
+  text-shadow: 2px 2px grey;
+  text-align: center;
 }
