@@ -34,6 +34,25 @@ Pizza.prototype.price = function() {
   return cost;
 }
 
+// Prototype to write a list of toppings as a single string, for printing text on the page in the pizza order summary panel.
+Pizza.prototype.toppingsString = function() {
+  var str = "";
+  var len = this.toppings.length;
+  console.log(this.toppings);
+  console.log(len);
+  if (len === 0) {
+    str = "cheese." // aka "string cheese". (a joke)
+  } else if (len === 1) {
+    str = this.toppings[0] + ".";
+  } else {
+    for (var i = 0; i < len - 1; i++) {
+      str = str + this.toppings[i] + " ";
+    }
+    str = str + "and " + this.toppings[len-1] + ".";
+  }
+  return str;
+}
+
 // Constructor function for new objects of type Order. Order will have a Customer object and an array of Pizza objects.
 function Order(Customer, pizzas) {
   this.Customer = Customer;
@@ -79,10 +98,26 @@ $(document).ready(function() {
     });
     var NextPizza = new Pizza(pizzaSize, pizzaCrust, pizzaToppings);
     pizzas.push(NextPizza);
-    console.log(pizzas);
     $("input:checkbox[name=toppings]:checked").each(function() {
       this.checked = false;
     });
+    $("#pizza-order-summary").slideDown();
+    if (pizzas.length === 1) {
+      $("#pizzas-left").html("<ul id='pizza-list-left'></ul>")
+    } else if (pizzas.length === 2) {
+      $("#pizzas-right").html("<ul id='pizza-list-right'></ul>");
+    }
+    if (pizzas.length % 2 === 1) {
+      $("ul#pizza-list-left").append("<li>Item #" + pizzas.length + ": " + NextPizza.size + "\" " + NextPizza.crustStyle + " with " + NextPizza.toppingsString() + " ($" + NextPizza.price() + ")</li>");
+    } else if (pizzas.length % 2 === 0) {
+      $("ul#pizza-list-right").append("<li>Item #" + pizzas.length + ": " + NextPizza.size + "\" " + NextPizza.crustStyle + " with " + NextPizza.toppingsString() + " ($" + NextPizza.price() + ")</li>");
+    }
+  });
+
+  $("#submit-order").click(function() {
+    NewOrder = new Order(NewCustomer, pizzas);
+    console.log(NewOrder);
+    console.log(NewOrder.price());
   });
 
 });
