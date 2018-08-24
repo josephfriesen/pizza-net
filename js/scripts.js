@@ -38,8 +38,6 @@ Pizza.prototype.price = function() {
 Pizza.prototype.toppingsString = function() {
   var str = "";
   var len = this.toppings.length;
-  console.log(this.toppings);
-  console.log(len);
   if (len === 0) {
     str = "cheese." // aka "string cheese". (a joke)
   } else if (len === 1) {
@@ -53,15 +51,19 @@ Pizza.prototype.toppingsString = function() {
   return str;
 }
 
-// Constructor function for new objects of type Order. Order will have a Customer object and an array of Pizza objects.
-function Order(Customer, pizzas) {
+// Constructor function for new objects of type Order. Order will have a Customer object, an array of Pizza objects, and a key delivery which will be valued true if the order is for delivery and false if it is a carryout order.
+function Order(Customer, pizzas, delivery) {
   this.Customer = Customer;
   this.pizzas = pizzas; // array of Pizza objects
+  this.delivery = delivery;
 }
 
 // Prototype to determine the total price of an order
 Order.prototype.price = function() {
-  var cost = 4; // $4 delivery charge
+  var cost = 0;
+  if (this.delivery) {
+    cost = cost + 4;  // $4 delivery charge
+  }
   this.pizzas.forEach(function(Pizza) {
     cost = cost + Pizza.price();
   })
@@ -77,6 +79,7 @@ $(document).ready(function() {
   var NewCustomer;
   var NewOrder;
   var pizzas = [];
+  var delivery;
 
   $("#user-info-submit-button").click(function() {
     $("#pizza-order").slideDown();
@@ -87,6 +90,12 @@ $(document).ready(function() {
     var zip = $("#zip").val();
     var phone = $("#phone").val();
     NewCustomer = new Customer(userName, address, city, state, zip, phone);
+    var orderType = $("input:radio[name=order-delivery]:checked").val();
+    if (orderType === "true") {
+      delivery = true;
+    } else {
+      delivery = false;
+    }
   });
 
   $("#pizza-order-add-button").click(function() {
@@ -115,11 +124,16 @@ $(document).ready(function() {
   });
 
   $("#submit-order").click(function() {
-    NewOrder = new Order(NewCustomer, pizzas);
+    NewOrder = new Order(NewCustomer, pizzas, delivery);
     $("#sign-off").slideDown();
     $("#order-form").slideUp();
     $("#order-cost").text(NewOrder.price());
     $("#customer-name").text(NewOrder.Customer.userName);
+    if (NewOrder.delivery) {
+      $("#order-type").text("arrive");
+    } else {
+      $("#order-type").text("be available");
+    }
   });
 
 });

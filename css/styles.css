@@ -52,6 +52,10 @@ body {
   text-shadow: 1px 1px grey;
 }
 
+p.disclaimer {
+  font-size: 6pt;
+}
+
 .btn-dark {
   color: yellow;
   text-shadow: 1px 1px grey;

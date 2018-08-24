@@ -54,6 +54,11 @@
                   <label for="phone">Phone number  </label>
                   <input type="text" id="phone">
                 </div>
+                <div class="form-group">
+                  <input type="radio" name="order-delivery" value="true" checked> Delivery*&nbsp;
+                  <input type="radio" name="order-delivery" value="false"> Carryout<br>
+                  <p class="disclaimer">*Note: there is a $4 charge for delivery</p>
+                </div>
                 <button type="button" class="btn btn-dark" id="user-info-submit-button">Done</button>
             </div>
           </div>
@@ -144,7 +149,7 @@
           </div>
           <div class="col-md-8">
             <br>
-            <h2>Your pizza will arrive</h2>
+            <h2>Your pizza will <span id="order-type"></span></h2>
             <h2>in 45 minutes</h2>
             <h2>Total cost: $<span id="order-cost"></span></h2>
             <h2>Gratuity not included</h2>
